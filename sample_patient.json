@@ -1,0 +1,194 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "given": [
+              "John"
+            ],
+            "family": "Smith"
+          }
+        ],
+        "birthDate": "1970-05-15",
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-diabetes",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73211009",
+              "display": "Diabetes mellitus type 2"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hypertension",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-metformin",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin 500 MG"
+            }
+          ]
+        },
+        "authoredOn": "2023-01-15",
+        "status": "active",
+        "dosageInstruction": [
+          {
+            "text": "Take 500mg twice daily with meals"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-lisinopril",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314076",
+              "display": "Lisinopril 10 MG"
+            }
+          ]
+        },
+        "authoredOn": "2023-02-10",
+        "status": "active",
+        "dosageInstruction": [
+          {
+            "text": "Take 10mg once daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2024-01-10"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/encounter-type",
+                "code": "AMB",
+                "display": "Ambulatory"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "73211009",
+                "display": "Diabetes follow-up"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2024-02-15"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/encounter-type",
+                "code": "AMB",
+                "display": "Ambulatory"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "38341003",
+                "display": "Hypertension follow-up"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
